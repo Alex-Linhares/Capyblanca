@@ -1,8 +1,8 @@
-# pyCapyblanca
+# Capyblanca
 
-A python implementation of Capyblanca
+A python implementation of [Capyblanca]()
 
-A first implementation will be done independently; and a second will be done using Abhijit Mahabal's framework, and documenting *the framework* for future developers (please see [FARGlexandria](https://github.com/Alex-Linhares/FARGlexandria) for more information).
+A first implementation will be done independently; and a second will be done using Abhijit Mahabal's framework, and documenting *the framework* for future developers (please see [FARGlexandria](https://github.com/Alex-Linhares/FARGlexandria) for publications, source code and more information).
 
 The very next thing to do is to create a simple script that gets a textfile with a chessboard and displays it as a vector, svg file.  Then I need to recreate *all* the positions that should go on the FCCA2.0 chapter. I'm thinking about maintaining the lame 8-bit style that the original Capyblanca had in Delphi.  With that, the chapter writes itself. 
 
