@@ -27,7 +27,7 @@ def basic_shapes(name):
     print (SquareNames)
 
 
-    size = 2.5
+    size = 2.0
     x = 0
     y = 0
     for t in range(64):
@@ -57,14 +57,14 @@ if __name__ == '__main__':
     #Importing black king
     from svgutils.compose import *
 
-    size = 2.5
+    size = 2.0
 
     Figure("16cm", "16cm",
         Panel(
               SVG("basic_board.svg")
              ),
         Panel(
-              SVG(Projectfolder+"black.bishop.svg").move(0.0,0.0).scale(2.0),
+              SVG(Projectfolder+"black.bishop.svg").move(2.0,4.0).scale(size * 0.75),
               Text("Look a bishop!", 25, 400, size=12, weight='bold')
              )
         ).save("fig_final_compose.svg")
