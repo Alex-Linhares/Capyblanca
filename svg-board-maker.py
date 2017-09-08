@@ -13,6 +13,20 @@ def basic_shapes(name):
                     'c1', 'c2', 'c3', 'c4', 'c5', 'c6', 'c7', 'c8',
                     'b1', 'b2', 'b3', 'b4', 'b5', 'b6', 'b7', 'b8',
                     'a1', 'a2', 'a3', 'a4', 'a5', 'a6', 'a7', 'a8']
+
+    chess_columns = ["a", "b", "c", "d", "e", "f", "g", "h"]
+    #chess_rows = ''.join(str(e) for e in range(1,9))
+    chess_rows = [str(e) for e in range(1,9)]
+
+    print (chess_rows)
+
+
+    #How to join these lists into a matrix, pythonically?
+    #SquareNames = [a+b for a,b in (chess_columns,chess_rows)]
+
+    print (SquareNames)
+
+
     size = 2.5
     x = 0
     y = 0
@@ -25,13 +39,9 @@ def basic_shapes(name):
             fillcolor = 'white'
         shapes.add(dwg.rect(insert=(x*size*cm, y*size*cm), size=(size*cm, size*cm),
                         fill=fillcolor, stroke='black', stroke_width=1))
-        print (SquareNames[t])
-        dwg.add(dwg.text(SquareNames[t], insert=((0.07+x*size)*cm, (0.22+y*size)*cm), fill='darkgray'))
-
-        #Importing black king
-
-
+        dwg.add(dwg.text(SquareNames[t], insert=((0.12+x*size)*cm, (0.22+y*size)*cm), fill='black'))
     dwg.save()
+
 
 if __name__ == '__main__':
     basic_shapes('basic_board.svg')
@@ -44,19 +54,17 @@ if __name__ == '__main__':
     #TODO: This is machine & OS dependent.  Fix it!
     Projectfolder = "C:\\Users\\alexa\\Documents\\GitHub\\Capyblanca\\Vector.Chess.Pieces\\"
 
+    #Importing black king
     from svgutils.compose import *
 
-    Figure("15cm", "15cm",
+    size = 2.5
+
+    Figure("16cm", "16cm",
         Panel(
               SVG("basic_board.svg")
              ),
         Panel(
-              SVG(Projectfolder+"black.bishop.svg").move(6.1,3.1).scale(2.2),
+              SVG(Projectfolder+"black.bishop.svg").move(0.0,0.0).scale(2.0),
               Text("Look a bishop!", 25, 400, size=12, weight='bold')
-             ).move(280, 0)
+             )
         ).save("fig_final_compose.svg")
-
-    #second_svg = svgt.tranform.fromfile(Projectfolder+'black.bishop.svg')
-    #second_svg.transform.moveto(5,5,3)
-    #template.append(second_svg)
-    #template.save('merged.svg')
